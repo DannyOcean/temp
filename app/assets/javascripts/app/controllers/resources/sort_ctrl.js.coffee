@@ -1,6 +1,8 @@
-app.controller 'SortCtrl', ($scope, $q, Sortdata, $state) ->
+app.controller 'SortCtrl', ($scope, $q, Sort, $state) ->
+  $scope.iarray = []
 
-  Sortdata.query({}).then (results) ->
-    $scope.data = results
-  , (err) ->
-    console.log 'Could not fetch data'
+  $scope.mergesort = ->
+    Sort.query({iarray: $scope.iarray}).then (results) ->
+      $scope.data = results
+    , (err) ->
+      console.log 'Could not fetch data'

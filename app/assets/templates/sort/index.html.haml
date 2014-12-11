@@ -1,1 +1,15 @@
-%h3 Yo, here you gonna see visualized data of the merge sort, enjoy.
+%h3.center Yo, here you gonna see visualized data of the merge sort, enjoy.
+%br
+%br
+
+%form.form-horizontal
+  .form-group
+    %label.col-sm-4.control-label( for='inputArray' ) Array to sort
+    .col-sm-4
+      %input#inputArray.form-control( type='text' placeholder='1 2 3...' ng-model='iarray' )
+  .form-group
+    .col-sm-4
+    .col-sm-4
+      .btn.btn-success( ng-click='mergesort()' ) Sort!
+
+{{ data }}
