@@ -1,0 +1,96 @@
+/* Variables
+*******************************************/
+$dark_grey: #B3B3B3;
+$light_grey: #E8E8E8;
+$lighter_grey: #F5F5F5;
+
+/* General
+*******************************************/
+.col-md-3 {
+  width: 23%;
+  float: none;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+/* Misc
+*******************************************/
+.title {
+  display: inline-block;
+  margin: 10px 0;
+  font-size: 26px;
+}
+
+.small-caps {
+  font-variant: small-caps;
+  font-weight: 600;
+}
+
+.mgl { margin-left: 5px; }
+.mgr { margin-right: 5px; }
+
+.min-width-120 { min-width: 120px; }
+
+.btn-like {
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #f8f8f8;
+
+  background-image: -webkit-gradient(
+  linear,
+  left top,
+  left bottom,
+  color-stop(0, #FFFFFF),
+  color-stop(1, #F2F2F2)
+  );
+  background-image: linear-gradient(to bottom, #FFFFFF 0%, #F2F2F2 100%);
+  
+  &:hover, &:focus, &:active {
+    background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(0, #FFFFFF),
+      color-stop(1, #F2F2F2)
+    );
+    background-image: linear-gradient(to top, #FFFFFF 0%, #F2F2F2 100%);
+  }
+}
+
+/* Tasks
+*******************************************/
+#create_btn {
+  margin-top: 12px;
+}
+
+.tasks {
+  .list {
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
+
+    background-color: $light_grey;
+    border-radius: 10px;
+
+    .task {
+      cursor: pointer;
+      margin: 8px 0;
+      margin-bottom: 10px;
+      padding: 8px;
+      border-radius: 5px;
+      background-color: $lighter_grey;
+      
+      &:hover {
+        box-shadow: 3px 3px 0 $dark_grey;
+      }
+
+      &.dragging {
+        min-width: 100px;
+        max-width: 200px;
+        width: 100%;
+      }
+    } 
+  }
+}
