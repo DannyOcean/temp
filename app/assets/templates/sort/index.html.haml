@@ -10,13 +10,14 @@
   .form-group
     .col-sm-4
     .col-sm-4
-      .btn.btn-success( ng-click='mergesort()' ) Sort!
+      .btn.btn-success( ng-click='mergesort()' ng-if='iarray' ) Sort!
 
 %div( ng-if='data' )
 
-  %h4 Result is: {{ data.result }}
+  %h4 Final result is: {{ data.result }}
+  %br
 
-  %table.table
+  %table.table.table-bordered
     %tr
       %td Part A
       %td Part B
@@ -32,4 +33,6 @@
 
   .btn.btn-primary( ng-click='next()' ng-if='data[counter+1]' ) Step Up
   .btn.btn-primary( ng-click='prev()' ng-if='data[counter-1]' ) Step Down
-  .btn.btn-primary( ng-click='reset()' ) Reset
+  .btn.btn-success( ng-click='play()' ) Play
+  .btn.btn-danger( ng-click='reset()' ng-if='counter > 0' ) Reset
+

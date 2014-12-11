@@ -7,9 +7,9 @@ class SortController < ApplicationController
     sort = Sort.new
     result = sort.long_mergesort(data)
     response = sort.response
+    response[:size] = sort.i
     response[:result] = result
 
     respond_with response
-    # respond_with Sort.mergesort(data)
   end
 end

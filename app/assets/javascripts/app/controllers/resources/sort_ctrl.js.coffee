@@ -1,4 +1,4 @@
-app.controller 'SortCtrl', ($scope, $q, Sort, $state) ->
+app.controller 'SortCtrl', ($scope, Sort, $interval) ->
   $scope.iarray = []
 
   $scope.mergesort = ->
@@ -13,8 +13,13 @@ app.controller 'SortCtrl', ($scope, $q, Sort, $state) ->
   
   $scope.prev = ->
     $scope.counter -= 1
-  
-  $scope.reset = ->
-    $scope.counter = 0
 
-  
+  $scope.play = ->
+    $scope.timer = $interval (->
+      $scope.next()
+      return
+      ), 800, $scope.data.size
+
+  $scope.reset = ->
+    $interval.cancel($scope.timer)
+    $scope.counter = 0

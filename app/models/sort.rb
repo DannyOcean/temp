@@ -1,5 +1,5 @@
 class Sort
-  attr_accessor :response
+  attr_reader :response, :i
 
   def initialize
     @response = {}
