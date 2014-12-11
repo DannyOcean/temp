@@ -8,7 +8,6 @@ class Sort
 
 
   def long_mergesort(array)
-    # binding.pry
     snapshot! [], [], array
 
     if array.count <= 1
