@@ -12,4 +12,24 @@
     .col-sm-4
       .btn.btn-success( ng-click='mergesort()' ) Sort!
 
-{{ data }}
+%div( ng-if='data' )
+
+  %h4 Result is: {{ data.result }}
+
+  %table.table
+    %tr
+      %td Part A
+      %td Part B
+      %td Array
+      %td Offset A
+      %td Offset B
+    %tr
+      %td {{ data[counter].partA }}
+      %td {{ data[counter].partB }}
+      %td {{ data[counter].array }}
+      %td {{ data[counter].offsetA }}
+      %td {{ data[counter].offsetB }}
+
+  .btn.btn-primary( ng-click='next()' ng-if='data[counter+1]' ) Step Up
+  .btn.btn-primary( ng-click='prev()' ng-if='data[counter-1]' ) Step Down
+  .btn.btn-primary( ng-click='reset()' ) Reset
